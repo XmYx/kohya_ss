@@ -65,6 +65,7 @@
   "scale_v_pred_loss_like_noise_pred": false,
   "sdxl_cache_text_encoder_outputs": false,
   "sdxl_checkbox": true,
+  "ssd1b_checkbox": false,
   "sdxl_no_half_vae": false,
   "seed": "1234",
   "shuffle_caption": false,

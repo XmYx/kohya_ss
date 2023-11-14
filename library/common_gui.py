@@ -482,6 +482,7 @@ def set_pretrained_model_name_or_path_input(
     v2,
     v_parameterization,
     sdxl,
+    ssd,
 ):
     # Check if the given model_list is in the list of SDXL models
     if str(model_list) in SDXL_MODELS:
@@ -502,6 +503,7 @@ def set_pretrained_model_name_or_path_input(
             v2,
             v_parameterization,
             sdxl,
+            ssd,
         )
 
     # Check if the given model_list is in the list of V2 base models
@@ -510,6 +512,7 @@ def set_pretrained_model_name_or_path_input(
         v2 = gr.Checkbox.update(value=True, visible=False)
         v_parameterization = gr.Checkbox.update(value=False, visible=False)
         sdxl = gr.Checkbox.update(value=False, visible=False)
+        ssd = gr.Checkbox.update(value=False, visible=False)
         pretrained_model_name_or_path = gr.Textbox.update(
             value=str(model_list), visible=False
         )
@@ -523,6 +526,7 @@ def set_pretrained_model_name_or_path_input(
             v2,
             v_parameterization,
             sdxl,
+            ssd,
         )
 
     # Check if the given model_list is in the list of V parameterization models
@@ -533,6 +537,7 @@ def set_pretrained_model_name_or_path_input(
         v2 = gr.Checkbox.update(value=True, visible=False)
         v_parameterization = gr.Checkbox.update(value=True, visible=False)
         sdxl = gr.Checkbox.update(value=False, visible=False)
+        ssd = gr.Checkbox.update(value=False, visible=False)
         pretrained_model_name_or_path = gr.Textbox.update(
             value=str(model_list), visible=False
         )
@@ -546,6 +551,7 @@ def set_pretrained_model_name_or_path_input(
             v2,
             v_parameterization,
             sdxl,
+            ssd,
         )
 
     # Check if the given model_list is in the list of V1 models
@@ -554,6 +560,7 @@ def set_pretrained_model_name_or_path_input(
         v2 = gr.Checkbox.update(value=False, visible=False)
         v_parameterization = gr.Checkbox.update(value=False, visible=False)
         sdxl = gr.Checkbox.update(value=False, visible=False)
+        ssd = gr.Checkbox.update(value=False, visible=False)
         pretrained_model_name_or_path = gr.Textbox.update(
             value=str(model_list), visible=False
         )
@@ -567,6 +574,7 @@ def set_pretrained_model_name_or_path_input(
             v2,
             v_parameterization,
             sdxl,
+            ssd,
         )
 
     # Check if the model_list is set to 'custom'
@@ -574,6 +582,7 @@ def set_pretrained_model_name_or_path_input(
         v2 = gr.Checkbox.update(visible=True)
         v_parameterization = gr.Checkbox.update(visible=True)
         sdxl = gr.Checkbox.update(visible=True)
+        ssd = gr.Checkbox.update(visible=True)
         pretrained_model_name_or_path = gr.Textbox.update(visible=True)
         pretrained_model_name_or_path_file = gr.Button.update(visible=True)
         pretrained_model_name_or_path_folder = gr.Button.update(visible=True)
@@ -585,6 +594,7 @@ def set_pretrained_model_name_or_path_input(
             v2,
             v_parameterization,
             sdxl,
+            ssd,
         )
 
 

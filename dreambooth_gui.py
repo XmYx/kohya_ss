@@ -61,6 +61,7 @@ def save_configuration(
     v2,
     v_parameterization,
     sdxl,
+    ssd,
     logging_dir,
     train_data_dir,
     reg_data_dir,
@@ -182,6 +183,7 @@ def open_configuration(
     v2,
     v_parameterization,
     sdxl,
+    ssd,
     logging_dir,
     train_data_dir,
     reg_data_dir,
@@ -298,6 +300,7 @@ def train_model(
     v2,
     v_parameterization,
     sdxl,
+    ssd,
     logging_dir,
     train_data_dir,
     reg_data_dir,
@@ -545,7 +548,7 @@ def train_model(
     # run_cmd = f'accelerate launch --num_cpu_threads_per_process={num_cpu_threads_per_process} "train_db.py"'
     run_cmd = f'accelerate launch --num_cpu_threads_per_process={num_cpu_threads_per_process}'
     if sdxl:
-        run_cmd += f' "./sdxl_train.py"'
+        run_cmd += f' "./sdxl_train.py"' if not ssd else f' "./sdxl_train_xl_ssd1b.py"'
     else:
         run_cmd += f' "./train_db.py"'
 
@@ -794,6 +797,7 @@ def dreambooth_tab(
             source_model.v2,
             source_model.v_parameterization,
             source_model.sdxl_checkbox,
+            source_model.ssd1b_checkbox,
             folders.logging_dir,
             folders.train_data_dir,
             folders.reg_data_dir,

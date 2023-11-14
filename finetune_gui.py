@@ -59,6 +59,7 @@ def save_configuration(
     v2,
     v_parameterization,
     sdxl_checkbox,
+    ssd1b_checkbox,
     train_dir,
     image_folder,
     output_dir,
@@ -186,6 +187,7 @@ def open_configuration(
     v2,
     v_parameterization,
     sdxl_checkbox,
+    ssd1b_checkbox,
     train_dir,
     image_folder,
     output_dir,
@@ -322,6 +324,7 @@ def train_model(
     v2,
     v_parameterization,
     sdxl_checkbox,
+    ssd1b_checkbox,
     train_dir,
     image_folder,
     output_dir,
@@ -526,7 +529,7 @@ def train_model(
 
     run_cmd = f'accelerate launch --num_cpu_threads_per_process={num_cpu_threads_per_process}'
     if sdxl_checkbox:
-        run_cmd += f' "./sdxl_train.py"'
+        run_cmd += f' "./sdxl_train.py"' if not ssd1b_checkbox else f' "./sdxl_train_xl_ssd1b.py"'
     else:
         run_cmd += f' "./fine_tune.py"'
 
@@ -919,6 +922,7 @@ def finetune_tab(headless=False):
             source_model.v2,
             source_model.v_parameterization,
             source_model.sdxl_checkbox,
+            source_model.ssd1b_checkbox,
             train_dir,
             image_folder,
             output_dir,
